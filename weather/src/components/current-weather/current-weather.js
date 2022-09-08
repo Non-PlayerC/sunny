@@ -16,26 +16,28 @@ const CurrentWeather = ({ data }) => {
       </div>
 
       <div className="bottom">
-        <p className="temperature">18℃</p>
+        <p className="temperature">{Math.round(data.main.temp)}℃</p>
         <div className="details">
           <div className="parameter-row">
-            <span className="parameter-label">Details</span>
+            <span className="parameter-label">详细</span>
           </div>
           <div className="parameter-row">
-            <span className="parameter-label">Feels like</span>
-            <span className="parameter-value">22℃</span>
+            <span className="parameter-label">居住温度</span>
+            <span className="parameter-value">
+              {Math.round(data.main.feels_like)}℃
+            </span>
           </div>
           <div className="parameter-row">
-            <span className="parameter-label">Wind</span>
-            <span className="parameter-value">2 m/s</span>
+            <span className="parameter-label">风速</span>
+            <span className="parameter-value">{data.wind.speed} m/s</span>
           </div>
           <div className="parameter-row">
-            <span className="parameter-label">Humidity</span>
-            <span className="parameter-value">15%</span>
+            <span className="parameter-label">湿度</span>
+            <span className="parameter-value">{data.main.humidity}%</span>
           </div>
           <div className="parameter-row">
-            <span className="parameter-label">Pressure</span>
-            <span className="parameter-value">15 hPa</span>
+            <span className="parameter-label">压强</span>
+            <span className="parameter-value">{data.main.pressure} hPa</span>
           </div>
         </div>
       </div>
